@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #3A4F8B;
+  --color-brand-red: #E5272E;
+  --color-brand-gold: #C1AF7B;
+  --color-brand-dark: #1A1A1A;
+}
+
+@layer utilities {
+  .bg-industrial {
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+  }
+  
+  .bg-steel {
+    background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+  }
+
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-shadow-md {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  @apply antialiased text-brand-dark;
+}

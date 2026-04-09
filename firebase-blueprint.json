@@ -1,0 +1,48 @@
+{
+  "entities": {
+    "Lead": {
+      "title": "Lead",
+      "description": "A quote request from a potential customer",
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "type": "string",
+          "description": "Full name of the person requesting the quote"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Phone number of the lead"
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the lead"
+        },
+        "service": {
+          "type": "string",
+          "description": "The specific service they are interested in"
+        },
+        "message": {
+          "type": "string",
+          "description": "Additional details about the project"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the request was submitted"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["new", "contacted", "quoted", "closed"],
+          "description": "Current status of the lead"
+        }
+      },
+      "required": ["fullName", "phone", "email", "service", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/leads/{leadId}": {
+      "schema": "Lead",
+      "description": "Collection of quote requests"
+    }
+  }
+}
